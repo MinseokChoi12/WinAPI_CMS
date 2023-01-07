@@ -155,10 +155,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="MSGameCore.h" />
+    <ClInclude Include="PlayLevel.h" />
+    <ClInclude Include="TitleLevel.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="MSGameCore.cpp" />
+    <ClCompile Include="PlayLevel.cpp" />
+    <ClCompile Include="TitleLevel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
