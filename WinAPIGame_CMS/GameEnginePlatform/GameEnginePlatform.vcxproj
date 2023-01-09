@@ -155,9 +155,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameEngineImage.cpp" />
+    <ClCompile Include="GameEngineResources.cpp" />
     <ClCompile Include="GameEngineWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameEngineImage.h" />
+    <ClInclude Include="GameEngineResources.h" />
     <ClInclude Include="GameEngineWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

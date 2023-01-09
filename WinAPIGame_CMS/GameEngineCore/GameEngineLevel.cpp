@@ -2,14 +2,16 @@
 #include "GameEngineActor.h"
 #include <GameEngineBase/GameEngineDebug.h>
 
-GameEngineLevel::GameEngineLevel() 
+GameEngineLevel::GameEngineLevel()
 {
 }
 
-GameEngineLevel::~GameEngineLevel() 
+GameEngineLevel::~GameEngineLevel()
 {
+	// 편하게 for문을 돌리게 하기 위해서 17인부터 
 	for (GameEngineActor* Actor : Actors)
 	{
+		// Actors.erase()
 		if (nullptr != Actor)
 		{
 			delete Actor;
@@ -18,6 +20,17 @@ GameEngineLevel::~GameEngineLevel()
 	}
 
 	Actors.clear();
+}
+
+void GameEngineLevel::ActorStart(GameEngineActor* _Actor)
+{
+	if (nullptr == _Actor)
+	{
+		MsgAssert("nullptr 액터를 Start하려고 했습니다.");
+		return;
+	}
+
+	_Actor->Start();
 }
 
 void GameEngineLevel::ActorsUpdate()
@@ -38,15 +51,4 @@ void GameEngineLevel::ActorsRender()
 	{
 		(*StartIter)->Render();
 	}
-}
-
-void GameEngineLevel::ActorStart(GameEngineActor* _Actor)
-{
-	if (nullptr == _Actor)
-	{
-		MsgAssert("nullptr 액터를 Start하려고 했습니다.");
-		return;
-	}
-
-	_Actor->Start();
 }
